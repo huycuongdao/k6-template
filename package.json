@@ -1,0 +1,22 @@
+{
+  "name": "k6-template",
+  "version": "1.0.0",
+  "main": "src/test/init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "docker compose up -d",
+    "init": "docker compose run --rm -T -v $(pwd)/src:/mnt/k6/src k6 run /mnt/k6/src/test/init.js --tag testid=init  --out experimental-prometheus-rw"
+  },
+  "type": "module",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/k6": "^0.54.2",
+    "axios": "^1.7.9",
+    "csv-parser": "^3.1.0",
+    "csv-writer": "^1.6.0",
+    "express": "^4.21.2",
+    "json2csv": "^6.0.0-alpha.2",
+    "k6": "^0.0.0"
+  }
+}
